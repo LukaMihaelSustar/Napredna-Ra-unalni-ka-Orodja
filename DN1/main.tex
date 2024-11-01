@@ -1,0 +1,75 @@
+\documentclass[10pt]{beamer} 
+\usepackage{lmodern}
+\setbeamertemplate{footline}[frame number]
+\usepackage{graphicx}
+
+
+%Information to be included in the title page:
+
+\title{Domača Naloga 1}
+\author{Luka Mihael Šuštar, 23221050}
+\institute{Fakulteta za strojništvo, Univerza v Ljubljani} 
+\date{\today} 
+\begin{document} 
+\frame{\titlepage}
+
+\begin{frame}
+\frametitle{Kazalo}
+ \tableofcontents[sectionstyle=show, subsectionstyle=show]
+\end{frame}
+
+\begin{frame} 
+\section{Vsebina datoteke $naloga1\_1.txt$}
+\frametitle{Vsebina datoteke $naloga1\_ 1.txt$}
+\textbf{Podatki predstavljajo časovne korake v katerih smo merili moč P[W]}
+\begin{itemize}
+    \item Vsebina prve vrstice datoteke : Čas [s]
+    \item Vsebina druge vrstice datoteke : Število vrstic in število podatkov v ostalih vrsticah
+\end{itemize}
+\vspace{5pt}
+\textbf{Za branje podatkov sem uporabil funkcijo $importdata$} :
+\begin{itemize}
+    \item V funkcijo vpišemo $datoteko$, $delimiterIn$  (na katerem mestu v datoteki naj razdeli podatke) in pa $headlinesIn$ (v kateri vrstici naj zažne oziroma koliko naj jih preskoči, preden začne brati podatke).
+    \item Izhodni podatki so shranjeni v obliki vektorja.
+\end{itemize}
+\end{frame}
+\begin{frame} 
+
+
+\section{Graf $P[t]$}
+\frametitle{Graf $P[t]$}  
+\vspace{10pt}
+Graf P[t], ki je izrisan na podlagi vhodnih podatkov iz datotek $naloga1\_1.txt$ in $naloga1\_2.txt$.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\linewidth]{Graf P[t].jpg}
+    \label{P(t)}
+\end{figure}
+\end{frame} 
+
+
+\section{Trapezna metoda}
+\begin{frame}[fragile]
+\frametitle{Trapezna formula}
+\begin{itemize}
+   
+\item Za izračun ploščine iz grafa, sem uporabil trapezno formulo:
+$$\sum_{i=1}^{n-1} \frac{h_i}{2} (P_i + P_{i+1})\ ,$$
+
+kjer $h_i$ predstavlja časovni korak : $h_i = t_{i+1} - t_i$. 
+
+\item V Matlab-u sem formulo zapisal kot for zanko:
+\begin{verbatim}
+rezultat = 0;
+for i = 1:1:(stevilo-1)
+    dt = t(i+1) - t(i); 
+    a = dt/2 * (P(i) + P(i+1));
+    rezultat = rezultat + a;
+end
+\end{verbatim}
+\item \textbf{Rezultat izračuna je :} $17.1665\ J$
+\end{itemize}
+\end{frame}
+
+
+\end{document}
