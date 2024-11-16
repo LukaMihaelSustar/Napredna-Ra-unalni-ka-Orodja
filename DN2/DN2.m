@@ -62,8 +62,6 @@ for i = 1:size(celice, 1)
 
         % Bilinearna interpolacija po y-osi
         T3 = (y3 - y_iskan) / (y3 - y1) * K1 + (y_iskan - y1) / (y3 - y1) * K2;
-
-        cell_found = true; % Nastavi, da smo našli celico
         break;
     end
 end
