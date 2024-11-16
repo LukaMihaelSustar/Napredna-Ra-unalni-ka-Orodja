@@ -70,6 +70,12 @@ end
 
 cas3 = toc;
 
+%največja temperatura:
+T_max = max(T);
+index = find(T==T_max);
+x_max = x(index);
+y_max = y(index);
+
 % Izpis rezultatov za primerjavo med posameznimi funkcijami
 fprintf('Bilinearna interpolacija: %.6f (čas: %.6f s)\n', T3, cas3);
 fprintf('Interpolacija s scatteredInterpolant: %.6f (čas: %.6f s)\n', T1, cas1);
