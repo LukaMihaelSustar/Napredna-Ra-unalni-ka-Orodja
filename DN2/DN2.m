@@ -75,6 +75,7 @@ x_max = x(index);
 y_max = y(index);
 
 % Izpis rezultatov za primerjavo med posameznimi funkcijami
+fprintf('Maksimalna temperatura je', T_max)
 fprintf('Bilinearna interpolacija: %.6f (čas: %.6f s)\n', T3, cas3);
 fprintf('Interpolacija s scatteredInterpolant: %.6f (čas: %.6f s)\n', T1, cas1);
 fprintf('Interpolacija s griddedInterpolant: %.6f (čas: %.6f s)\n', T2, cas2);
